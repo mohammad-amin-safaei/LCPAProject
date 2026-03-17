@@ -25,7 +25,7 @@ def load_rr_intervals(data_dir):
             fs = wfdb.rdheader(record_path).fs          # sampling frequency
 
             rr = np.diff(r_peaks) / fs                  # convert to seconds
-            rr = rr[(rr > 0.3) & (rr < 2.0)]           # physiological voltage range of heart
+            rr = rr[(rr > 0.3) & (rr < 2.0)]           
 
             rr_data[record_name] = rr
             print(f"  {record_name}: {len(rr)} beats, "
